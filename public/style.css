@@ -41,7 +41,20 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.estimate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px 0 20px;
+    font-size: 0.95rem;
+    color: #777;
+    font-weight: 500;
+}
 
+.estimate i {
+    color: #fffcfc; /* Match your accent color */
+}
 html { 
     scroll-behavior: smooth; 
     background-color: var(--primary-color);
