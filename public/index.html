@@ -23,7 +23,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#reviews">Reviews</a></li>
-               
+              
                 <li><a href="#book" class="btn-nav">Book Now</a></li>
             </ul>
         </div>
@@ -65,7 +65,7 @@
         <div class="card premium">
             <div class="badge">Most Popular</div>
             <h3>Standard Detail</h3>
-            <h4 class="price">$35+</h4>
+            <h4 class="price">$40+</h4>
             <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 1–1.5 Hours</p>
 
             <ul>
@@ -83,8 +83,8 @@
         <!-- Tier 3 -->
         <div class="card">
             <h3>Complete Detail</h3>
-            <h4 class="price">$100+</h4>
-            <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 2–5 Hours</p>
+            <h4 class="price">$150+</h4>
+            <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 3–6 Hours</p>
 
             <ul>
                 <li><i class="fa-solid fa-check"></i> Full Interior Detail</li>
@@ -129,7 +129,7 @@
                         <div class="stars">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p>"Fast, professional, and friendly. I got the $35 package and the wipe down and polish were perfect. Great attention to detail without breaking the bank."</p>
+                        <p>"Fast, professional, and friendly. I got the $40 package and the wipe down and polish were perfect. Great attention to detail without breaking the bank."</p>
                         <h5>— John D.</h5>
                     </div>
                     <!-- Slide 3 (Mike T.) -->
@@ -202,15 +202,16 @@
                         <i class="fa-solid fa-clock"></i>
                         <div>
                             <strong>Working Hours</strong>
-                            <p>Weekdays: 5:00 PM - 9:00 PM<br>Weekends: 10:00 AM - 9:00 PM</p>
+                            <p>Weekdays: 5:00 PM - 9:00 PM<br>Weekends: 9:00 AM - 9:00 PM</p>
                         </div>
                     </div>
 
                     <div class="info-item">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <strong>Text us</strong>
-                            <p>226-582-4530</p>
+                            <strong>Reach out</strong>
+                            <p>Whatsapp: 226-582-4530</p>
+                            <p>Email: ao.detailing7@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -253,8 +254,8 @@
                         <select id="servicePackage" required>
                             <option value="" disabled selected>Choose a package</option>
                             <option value="Quick Refresh">Quick Refresh (From $10)</option>
-                            <option value="Standard Detail">Standard Detail (From $35)</option>
-                            <option value="Complete Detail">Complete Detail (From $100)</option>
+                            <option value="Standard Detail">Standard Detail (From $40)</option>
+                            <option value="Complete Detail">Complete Detail (From $150)</option>
                         </select>
                         <span class="error-msg" id="serviceError"></span>
                     </div>
@@ -273,7 +274,7 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea id="message" rows="4" placeholder="Tell us about your car (Make, Model, Condition) and desired service..." required></textarea>
+                        <textarea id="message" rows="4" placeholder="Please provide your vehicle's make, model, current condition, and the service you'd like to book. If applicable, mention any stains, pet hair, or other areas requiring special attention." required></textarea>
                         <span class="error-msg" id="messageError"></span>
                     </div>
 
@@ -381,7 +382,7 @@
             const minDate = `${yyyy}-${mm}-${dd}`;
 
             const maxObj = new Date();
-            maxObj.setMonth(maxObj.getMonth() + 6);
+            maxObj.setMonth(maxObj.getMonth() + 1);
             const mYyyy = maxObj.getFullYear();
             let mMm = maxObj.getMonth() + 1;
             let mDd = maxObj.getDate();
@@ -556,7 +557,7 @@
                 }
             } catch (error) {
                 statusText.className = "error-msg-status";
-                statusText.innerText = "Connection issue. Please text us directly at 226-582-4530.";
+                statusText.innerText = "Connection issue. Please text us directly on whatsapp: 226-582-4530.";
             }
 
             btn.innerText = "Send Reservation Request";
