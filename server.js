@@ -46,13 +46,13 @@ app.post('/api/book', async (req, res) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const maxFutureDate = new Date();
-    maxFutureDate.setMonth(maxFutureDate.getMonth() + 6);
+    maxFutureDate.setMonth(maxFutureDate.getMonth() + 1);
 
     if (bookingDate < today) {
         return res.status(400).json({ success: false, message: "Booking date cannot be in the past." });
     }
     if (bookingDate > maxFutureDate) {
-        return res.status(400).json({ success: false, message: "Bookings can only be scheduled up to 6 months in advance." });
+        return res.status(400).json({ success: false, message: "Bookings can only be scheduled up to 1 months in advance." });
     }
 
     const formattedTime = formatTimeTo12Hour(time);
