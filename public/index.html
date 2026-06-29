@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AO Detailing | Premium Car Care in St. Thomas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AO Detailing | Premium Car Care</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">AO <span class="accent-text">Detailing</span></div>
+            <div class="logo">AO <span>Detailing</span></div>
             <button class="menu-toggle" aria-label="Toggle navigation" id="mobile-menu-btn">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -22,8 +22,6 @@
             <ul class="nav-links" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-              
                 <li><a href="#book" class="btn-nav">Book Now</a></li>
             </ul>
         </div>
@@ -33,165 +31,108 @@
     <header id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Revive Your Ride's <span class="gradient-text">Shine</span></h1>
-            <p>Professional, affordable, and meticulous car detailing right here in St. Thomas, Ontario. Let us handle the dirt while you enjoy the drive.</p>
-            <a href="#book" class="btn-primary">Make a Reservation</a>
+            <div class="hero-badge">Professional Auto Detailing</div>
+            <h1>Revive Your Ride's <span class="accent-text">Shine</span></h1>
+            <p>Affordable, meticulous, and high-quality car detailing in St. Thomas, Ontario. We handle the dirt, you enjoy the drive.</p>
+            <div class="hero-actions">
+                <a href="#book" class="btn-primary">Make a Reservation</a>
+                <a href="#services" class="btn-secondary">View Packages</a>
+            </div>
         </div>
     </header>
-<!-- Services & Pricing Section -->
-<section id="services" class="services">
-    <div class="section-header">
-        <h2>Our Services & Pricing</h2>
-        <p>High-quality detailing tailored directly to your car's specific size and condition.</p>
-    </div>
 
-    <div class="cards">
-        <!-- Tier 1 -->
-        <div class="card">
-            <h3>Quick Refresh</h3>
-            <h4 class="price">$10+</h4>
-            <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 10–20 Minutes</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
-                <li><i class="fa-solid fa-check"></i> Dust Removal</li>
-                <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
-            </ul>
-
-            <button class="btn-card select-package-btn" data-package="Quick Refresh">Select Package</button>
-        </div>
-
-        <!-- Tier 2 -->
-        <div class="card premium">
-            <div class="badge">Most Popular</div>
-            <h3>Standard Detail</h3>
-            <h4 class="price">$40+</h4>
-            <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 1–1.5 Hours</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Carpet Cleaning</li>
-                <li><i class="fa-solid fa-check"></i> Interior Wipe Down</li>
-                <li><i class="fa-solid fa-check"></i> Stain Removal</li>
-                <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
-                <li><i class="fa-solid fa-check"></i> Dust Removal</li>
-                <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
-            </ul>
-
-            <button class="btn-card btn-card-premium select-package-btn" data-package="Standard Detail">Select Package</button>
-        </div>
-
-        <!-- Tier 3 -->
-        <div class="card">
-            <h3>Complete Detail</h3>
-            <h4 class="price">$150+</h4>
-            <p class="estimate"><i class="fa-regular fa-clock"></i> Estimated Time: 3–6 Hours</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Full Interior Detail</li>
-                <li><i class="fa-solid fa-check"></i> Full Exterior Detail</li>
-                <li><i class="fa-solid fa-check"></i> Carpet Cleaning</li>
-                <li><i class="fa-solid fa-check"></i> Interior & Exterior Wipe Down</li>
-                <li><i class="fa-solid fa-check"></i> Stain Removal</li>
-                <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
-                <li><i class="fa-solid fa-check"></i> Dust Removal</li>
-                <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
-                <li><i class="fa-solid fa-check"></i> Exterior Wash</li>
-            </ul>
-
-            <button class="btn-card select-package-btn" data-package="Complete Detail">Select Package</button>
-        </div>
-    </div>
-
-    <p class="disclaimer"><em>Note: Prices may vary depending on the condition and size of the vehicle.</em></p>
-</section>
-    <!-- Reviews Carousel Section -->
-    <section id="reviews" class="reviews">
+    <!-- Services & Pricing Section -->
+    <section id="services" class="services">
         <div class="section-header">
-            <h2>What Our Clients Say</h2>
-            <p>Real feedback from local vehicle owners in Elgin County.</p>
+            <h2>Service Packages</h2>
+            <p>High-quality detailing tailored directly to your vehicle's specific size and condition.</p>
         </div>
-        
-        <div class="carousel-outer-wrapper">
-            <button class="carousel-btn prev-btn" id="prevReviewBtn" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
-            
-            <div class="carousel-viewport-wrapper">
-                <div class="reviews-viewport" id="reviewsViewport">
-                    <!-- Slide 1 (Sarah M.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"AO Detailing brought my car back to life! The full detail was incredibly thorough and super affordable. My interior looks like it just rolled off the lot. Highly recommend!"</p>
-                        <h5>— Sarah M.</h5>
-                    </div>
-                    <!-- Slide 2 (John D.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Fast, professional, and friendly. I got the $40 package and the wipe down and polish were perfect. Great attention to detail without breaking the bank."</p>
-                        <h5>— John D.</h5>
-                    </div>
-                    <!-- Slide 3 (Mike T.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Best car detailing in St. Thomas. The guys are meticulous, and you can't beat the prices. I had some tough carpet stains and they got them right out."</p>
-                        <h5>— Mike T.</h5>
-                    </div>
-                    <!-- Slide 4 (Jessica K.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Absolutely outstanding service! I booked 'The Complete Detail' package for my SUV and they spent hours making it absolutely flawless. Worth every single penny."</p>
-                        <h5>— Jessica K.</h5>
-                    </div>
-                    <!-- Slide 5 (David L.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Incredible attention to detail. They cleaned spots in my dashboard that I didn't even know could collect dust. Booking process was quick and easy."</p>
-                        <h5>— David L.</h5>
-                    </div>
-                    <!-- Slide 6 (Marcus P.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Great local shop. Honest pricing, extremely hard working, and flexible with times. My truck hasn't looked this clean since I bought it off the lot."</p>
-                        <h5>— Marcus P.</h5>
-                    </div>
-                    <!-- Slide 7 (Amanda R.) -->
-                    <div class="review-card">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"The quick refresh was fast but shockingly thorough. They got all the dog hair out which is usually impossible to do yourself. I will definitely be back!"</p>
-                        <h5>— Amanda R.</h5>
-                    </div>
+
+        <div class="cards">
+            <!-- Tier 1 -->
+            <div class="card">
+                <h3>Quick Refresh</h3>
+                <div class="price-wrapper">
+                    <h4 class="price">$10<span>+</span></h4>
+                    <p class="estimate"><i class="fa-regular fa-clock"></i> 10–20 Mins</p>
                 </div>
+
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
+                    <li><i class="fa-solid fa-check"></i> Dust Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
+                    <li class="low-priority"><i class="fa-solid fa-check"></i> Trash Removal</li>
+                </ul>
+
+                <button class="btn-card select-package-btn" data-package="Quick Refresh">Select Package</button>
             </div>
-            
-            <button class="carousel-btn next-btn" id="nextReviewBtn" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <!-- Tier 2 -->
+            <div class="card premium">
+                <div class="badge">Most Popular</div>
+                <h3>Standard Detail</h3>
+                <div class="price-wrapper">
+                    <h4 class="price">$65<span>+</span></h4>
+                    <p class="estimate"><i class="fa-regular fa-clock"></i> 1–1.5 Hours</p>
+                </div>
+
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Seat & Carpet Stain Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
+                    <li><i class="fa-solid fa-check"></i> Interior Window Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Interior Wipe Down</li>
+                    <li><i class="fa-solid fa-check"></i> Rubber Mat Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Dust Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
+                    <li class="low-priority"><i class="fa-solid fa-check"></i> Trash Removal</li>
+                </ul>
+
+                <button class="btn-card btn-card-premium select-package-btn" data-package="Standard Detail">Select Package</button>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="card">
+                <h3>Complete Detail</h3>
+                <div class="price-wrapper">
+                    <h4 class="price">$150<span>+</span></h4>
+                    <p class="estimate"><i class="fa-regular fa-clock"></i> 3–6 Hours</p>
+                </div>
+
+                <ul>
+                    <li><i class="fa-solid fa-star"></i> Full Exterior Detail</li>
+                    <li><i class="fa-solid fa-star"></i> Full Interior Detail</li>
+                    <li><i class="fa-solid fa-check"></i> Leather Cleaning & Conditioning</li>
+                    <li><i class="fa-solid fa-check"></i> Carpet Washing & Extraction</li>
+                    <li><i class="fa-solid fa-check"></i> Seat & Carpet Stain Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Wheel & Tire Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Door Jamb Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Interior Window Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
+                    <li><i class="fa-solid fa-check"></i> Interior Wipe Down</li>
+                    <li><i class="fa-solid fa-check"></i> Rubber Mat Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Dust Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
+                    <li class="low-priority"><i class="fa-solid fa-check"></i> Trash Removal</li>
+                </ul>
+
+                <button class="btn-card select-package-btn" data-package="Complete Detail">Select Package</button>
+            </div>
         </div>
+
+        <p class="disclaimer"><i class="fa-solid fa-circle-info"></i> Note: Prices may vary depending on the condition and size of the vehicle.</p>
     </section>
-
-   <!--FAQ HERE-->
-
+    
     <!-- Contact & Booking Section -->
     <section id="book" class="contact-section">
         <div class="contact-container">
             <!-- Info Panel -->
             <div class="contact-info">
                 <div class="contact-info-items">
-                    <h2>Get in Touch</h2>
-                    <p style="margin-bottom: 20px;">Ready to make your car shine? Send us a reservation request or contact us directly.</p>
+                    <h2>Book Your Spot</h2>
+                    <p class="subtitle">Ready to make your car shine? Request a reservation or reach out to us directly.</p>
                     
                     <div class="info-item location-trigger">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
                         <div>
                             <strong>Location <span class="map-hint">Tap to Navigate</span></strong>
                             <p>213 Highview Drive<br>St. Thomas, ON</p>
@@ -199,7 +140,7 @@
                     </div>
                     
                     <div class="info-item">
-                        <i class="fa-solid fa-clock"></i>
+                        <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
                         <div>
                             <strong>Working Hours</strong>
                             <p>Weekdays: 5:00 PM - 9:00 PM<br>Weekends: 9:00 AM - 9:00 PM</p>
@@ -207,11 +148,10 @@
                     </div>
 
                     <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
                         <div>
-                            <strong>Reach out</strong>
-                            <p>Whatsapp: 226-582-4530</p>
-                            <p>Email: ao.detailing7@gmail.com</p>
+                            <strong>Contact Us</strong>
+                            <p>WhatsApp: 226-582-4530<br>Email: ao.detailing7@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -226,35 +166,39 @@
 
             <!-- Booking Form -->
             <div class="contact-form">
-                <h3>Book a Reservation</h3>
                 <form id="reservationForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" id="firstName" placeholder="First Name" required>
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="John" required>
                             <span class="error-msg" id="firstNameError"></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="lastName" placeholder="Last Name" required>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Doe" required>
                             <span class="error-msg" id="lastNameError"></span>
                         </div>
                     </div>
+                    
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="(123) 456-7890" required>
                             <span class="error-msg" id="phoneError"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email Address" required>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
                             <span class="error-msg" id="emailError"></span>
                         </div>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
+                    <div class="form-group full-width">
                         <label for="servicePackage">Desired Service Package</label>
                         <select id="servicePackage" required>
-                            <option value="" disabled selected>Choose a package</option>
+                            <option value="" disabled selected>Select a package...</option>
                             <option value="Quick Refresh">Quick Refresh (From $10)</option>
-                            <option value="Standard Detail">Standard Detail (From $40)</option>
+                            <option value="Standard Detail">Standard Detail (From $65)</option>
                             <option value="Complete Detail">Complete Detail (From $150)</option>
                         </select>
                         <span class="error-msg" id="serviceError"></span>
@@ -273,12 +217,13 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <textarea id="message" rows="4" placeholder="Please provide your vehicle's make, model, current condition, and the service you'd like to book. If applicable, mention any stains, pet hair, or other areas requiring special attention." required></textarea>
+                    <div class="form-group full-width">
+                        <label for="message">Vehicle Details & Special Requests</label>
+                        <textarea id="message" rows="4" placeholder="Make, model, condition? Any specific stains, pet hair, or areas needing extra attention?" required></textarea>
                         <span class="error-msg" id="messageError"></span>
                     </div>
 
-                    <button type="submit" class="btn-primary" id="submitBtn">Send Reservation Request</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Send Reservation Request</button>
                     <p id="formStatus"></p>
                 </form>
             </div>
@@ -307,10 +252,14 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 AO Detailing. All Rights Reserved. Located in <span class="location-trigger footer-loc-link">St. Thomas, ON</span>.</p>
+        <div class="footer-content">
+            <div class="footer-logo">AO <span>Detailing</span></div>
+            <p>&copy; 2026 AO Detailing. All Rights Reserved.</p>
+            <p>Located in <span class="location-trigger footer-loc-link">St. Thomas, ON</span>.</p>
+        </div>
     </footer>
 
-    <!-- Frontend Form Handling, Slider, and Maps Modal Logic -->
+    <!-- Frontend Form Handling and Maps Modal Logic -->
     <script>
         // Maps Modal handling
         const mapsModal = document.getElementById('mapsModal');
@@ -346,30 +295,7 @@
             }
         });
 
-        // Horizontal Reviews Carousel Logic
-        const viewport = document.getElementById('reviewsViewport');
-        const prevReviewBtn = document.getElementById('prevReviewBtn');
-        const nextReviewBtn = document.getElementById('nextReviewBtn');
-
-        prevReviewBtn.addEventListener('click', () => {
-            const cardWidth = viewport.querySelector('.review-card').offsetWidth + 20; // card + gap
-            viewport.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-        });
-
-        nextReviewBtn.addEventListener('click', () => {
-            const cardWidth = viewport.querySelector('.review-card').offsetWidth + 20; // card + gap
-            viewport.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        });
-
-        // FAQ Accordion Toggle
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-
-        // Set dynamic date ranges (Min = today, Max = 6 months from today)
+        // Set dynamic date ranges (Min = today, Max = 1 month from today)
         window.addEventListener('DOMContentLoaded', () => {
             const dateInput = document.getElementById('bookingDate');
             const todayObj = new Date();
@@ -417,11 +343,12 @@
                 const dropDown = document.getElementById('servicePackage');
                 dropDown.value = choice;
                 document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
-                dropDown.focus();
+                // Small delay to ensure smooth scrolling finishes before focus
+                setTimeout(() => dropDown.focus(), 600);
             });
         });
 
-        // Validation Rules (Regex Patterns matching server configurations)
+        // Validation Rules 
         const patterns = {
             name: /^[a-zA-ZÀ-ÿ\s'\-]{2,30}$/,
             phone: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
@@ -431,7 +358,7 @@
         const validateElement = (input, pattern, errorLabel, errMsg) => {
             const val = input.value.trim();
             if (!val) {
-                errorLabel.innerText = "This field cannot be empty.";
+                errorLabel.innerText = "Required field.";
                 input.classList.add('invalid-field');
                 return false;
             } else if (pattern && !pattern.test(val)) {
@@ -469,14 +396,14 @@
                 message: document.getElementById('messageError')
             };
 
-            const isFirstValid = validateElement(first, patterns.name, errors.first, "Must be letters only (2-30 chars).");
-            const isLastValid = validateElement(last, patterns.name, errors.last, "Must be letters only (2-30 chars).");
-            const isPhoneValid = validateElement(phone, patterns.phone, errors.phone, "Must be a 10-digit number.");
-            const isEmailValid = validateElement(email, patterns.email, errors.email, "Please enter a valid email format.");
+            const isFirstValid = validateElement(first, patterns.name, errors.first, "Letters only (2-30 chars).");
+            const isLastValid = validateElement(last, patterns.name, errors.last, "Letters only (2-30 chars).");
+            const isPhoneValid = validateElement(phone, patterns.phone, errors.phone, "10-digit number required.");
+            const isEmailValid = validateElement(email, patterns.email, errors.email, "Invalid email format.");
 
             let isServiceValid = true;
             if (!service.value) {
-                errors.service.innerText = "Please choose a package option.";
+                errors.service.innerText = "Select a package.";
                 service.classList.add('invalid-field');
                 isServiceValid = false;
             } else {
@@ -486,7 +413,7 @@
 
             let isDateValid = true;
             if (!date.value) {
-                errors.date.innerText = "Please choose a date.";
+                errors.date.innerText = "Select a date.";
                 date.classList.add('invalid-field');
                 isDateValid = false;
             } else {
@@ -505,7 +432,7 @@
 
             let isTimeValid = true;
             if (!time.value) {
-                errors.time.innerText = "Please specify a preferred time slot.";
+                errors.time.innerText = "Select a time.";
                 time.classList.add('invalid-field');
                 isTimeValid = false;
             } else {
@@ -522,7 +449,7 @@
             const statusText = document.getElementById('formStatus');
             const btn = document.getElementById('submitBtn');
             
-            btn.innerText = "Sending Details...";
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
             btn.disabled = true;
             statusText.innerText = "";
             statusText.className = "";
@@ -549,15 +476,15 @@
 
                 if (response.ok) {
                     statusText.className = "success-msg";
-                    statusText.innerText = "Reservation request sent successfully! We will contact you soon.";
+                    statusText.innerHTML = "<i class='fa-solid fa-circle-check'></i> Request sent successfully! We'll be in touch.";
                     document.getElementById('reservationForm').reset();
                 } else {
                     statusText.className = "error-msg-status";
-                    statusText.innerText = result.message || "Failed to process request.";
+                    statusText.innerHTML = `<i class='fa-solid fa-circle-exclamation'></i> ${result.message || "Failed to process request."}`;
                 }
             } catch (error) {
                 statusText.className = "error-msg-status";
-                statusText.innerText = "Connection issue. Please text us directly on whatsapp: 226-582-4530.";
+                statusText.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i> Connection issue. Please WhatsApp us at 226-582-4530.";
             }
 
             btn.innerText = "Send Reservation Request";
