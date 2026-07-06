@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Recent Works | AO Detailing</title>
+    
+    <!-- Website Icon / Favicon -->
+    <link rel="icon" type="image/png" href="icon.jpg">
+    <link rel="apple-touch-icon" href="icon.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Clickable Logo points to root -->
+            <a href="/" class="logo" style="text-decoration: none;">AO <span>Detailing</span></a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation" id="mobile-menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-menu">
+                <!-- Clean URLs pointing to the main page -->
+                <li><a href="/">Home</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/portfolio" style="color: var(--text-light); opacity: 1; font-weight: 700;">Recent Works</a></li>
+                <li><a href="/#book" class="btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Recent Works / Portfolio Section -->
+    <section class="portfolio-section" style="min-height: 80vh;">
+        <div class="section-header">
+            <h2>Recent Works</h2>
+            <p>Check out the results of our meticulous detailing transformations.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item"><img src="work1.jpeg" alt="Detailing Work 1" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work2.jpeg" alt="Detailing Work 2" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work3.jpeg" alt="Detailing Work 3" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work4.jpeg" alt="Detailing Work 4" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work5.jpeg" alt="Detailing Work 5" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work6.jpeg" alt="Detailing Work 6" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work7.jpeg" alt="Detailing Work 7" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work8.jpeg" alt="Detailing Work 8" loading="lazy"></div>
+            <div class="portfolio-item"><img src="work9.jpeg" alt="Detailing Work 9" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- Map App Chooser Modal (Keeps footer functional on this page) -->
+    <div id="mapsModal" class="maps-modal">
+        <div class="maps-modal-content">
+            <button class="maps-modal-close" id="closeMapsModalBtn">&times;</button>
+            <h3>Get Directions</h3>
+            <p>Select your preferred navigation application to visit us at <strong>213 Highview Drive</strong>:</p>
+            <div class="maps-options">
+                <a href="https://maps.apple/p/oG5MeePEcAgwkf" target="_blank" class="maps-btn apple-maps-btn" id="appleMapsLink">
+                    <i class="fa-brands fa-apple"></i>
+                    <span>Apple Maps</span>
+                    <span class="rec-badge" id="appleRec">Recommended</span>
+                </a>
+                <a href="https://maps.app.goo.gl/vmgqBKbHzzWJocdf6" target="_blank" class="maps-btn google-maps-btn" id="googleMapsLink">
+                    <i class="fa-brands fa-google"></i>
+                    <span>Google Maps</span>
+                    <span class="rec-badge" id="googleRec">Recommended</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="/" class="footer-logo" style="text-decoration: none; display: inline-block;">AO <span>Detailing</span></a>
+            <p>&copy; 2026 AO Detailing. All Rights Reserved.</p>
+            <p>Located in <span class="location-trigger footer-loc-link">St. Thomas, ON</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu logic for this page
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Maps Modal handling so the footer location trigger works
+        const mapsModal = document.getElementById('mapsModal');
+        const closeMapsModalBtn = document.getElementById('closeMapsModalBtn');
+        const appleRec = document.getElementById('appleRec');
+        const googleRec = document.getElementById('googleRec');
+
+        document.querySelectorAll('.location-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // OS detection
+                const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+                if (isApple) {
+                    appleRec.style.display = 'inline-block';
+                    googleRec.style.display = 'none';
+                } else {
+                    googleRec.style.display = 'inline-block';
+                    appleRec.style.display = 'none';
+                }
+                
+                mapsModal.classList.add('active');
+            });
+        });
+
+        closeMapsModalBtn.addEventListener('click', () => {
+            mapsModal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === mapsModal) {
+                mapsModal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
