@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AO Detailing | Premium Car Care</title>
+    
+    <!-- Website Icon / Favicon -->
+    <link rel="icon" type="image/png" href="icon.jpg">
+    <link rel="apple-touch-icon" href="icon.jpg">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,16 +18,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">AO <span>Detailing</span></div>
+            <!-- Smooth scrolls to top, no URL change -->
+            <a href="#" class="logo scroll-link" data-target="home" style="text-decoration: none;">AO <span>Detailing</span></a>
+            
             <button class="menu-toggle" aria-label="Toggle navigation" id="mobile-menu-btn">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
             <ul class="nav-links" id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#book" class="btn-nav">Book Now</a></li>
+                <li><a href="#" class="scroll-link" data-target="home">Home</a></li>
+                <li><a href="#" class="scroll-link" data-target="services">Services</a></li>
+                
+                <!-- Clean URL: /portfolio instead of portfolio.html -->
+                <li><a href="/portfolio">Recent Works</a></li>
+                
+                <li><a href="#" class="btn-nav scroll-link" data-target="book">Book Now</a></li>
             </ul>
         </div>
     </nav>
@@ -35,8 +46,8 @@
             <h1>Revive Your Ride's <span class="accent-text">Shine</span></h1>
             <p>Affordable, meticulous, and high-quality car detailing in St. Thomas, Ontario. We handle the dirt, you enjoy the drive.</p>
             <div class="hero-actions">
-                <a href="#book" class="btn-primary">Make a Reservation</a>
-                <a href="#services" class="btn-secondary">View Packages</a>
+                <a href="#" class="btn-primary scroll-link" data-target="book">Make a Reservation</a>
+                <a href="#" class="btn-secondary scroll-link" data-target="services">View Packages</a>
             </div>
         </div>
     </header>
@@ -62,7 +73,6 @@
                     <li><i class="fa-solid fa-check"></i> Dust Removal</li>
                     <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
                     <li><i class="fa-solid fa-check"></i> Trash Removal</li>
-                    
                 </ul>
 
                 <button class="btn-card select-package-btn" data-package="Quick Refresh">Select Package</button>
@@ -85,8 +95,7 @@
                     <li><i class="fa-solid fa-check"></i> Rubber Mat Cleaning</li>
                     <li><i class="fa-solid fa-check"></i> Dust Removal</li>
                     <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
-                 <li><i class="fa-solid fa-check"></i> Trash Removal</li>
-                    
+                    <li><i class="fa-solid fa-check"></i> Trash Removal</li>
                 </ul>
 
                 <button class="btn-card btn-card-premium select-package-btn" data-package="Standard Detail">Select Package</button>
@@ -104,7 +113,6 @@
                     <li><i class="fa-solid fa-star"></i> Full Exterior Detail</li>
                     <li><i class="fa-solid fa-star"></i> Full Interior Detail</li>
                     <li><i class="fa-solid fa-check"></i> Leather Cleaning & Conditioning</li>
-                    <li><i class="fa-solid fa-check"></i> Dog Hair Removal</li>
                     <li><i class="fa-solid fa-check"></i> Carpet Washing & Extraction</li>
                     <li><i class="fa-solid fa-check"></i> Seat & Carpet Stain Removal</li>
                     <li><i class="fa-solid fa-check"></i> Wheel & Tire Cleaning</li>
@@ -116,13 +124,11 @@
                     <li><i class="fa-solid fa-check"></i> Dust Removal</li>
                     <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
                    <li><i class="fa-solid fa-check"></i> Trash Removal</li>
-                    
                 </ul>
 
                 <button class="btn-card select-package-btn" data-package="Complete Detail">Select Package</button>
             </div>
         </div>
-
         <p class="disclaimer"><i class="fa-solid fa-circle-info"></i> Note: Prices may vary depending on the condition and size of the vehicle.</p>
     </section>
     
@@ -134,7 +140,14 @@
                 <div class="contact-info-items">
                     <h2>Book Your Spot</h2>
                     <p class="subtitle">Ready to make your car shine? Request a reservation or reach out to us directly.</p>
-                    
+                         <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <strong>Working Hours</strong>
+                            <p>Weekdays: 5:00 PM - 9:00 PM<br>Weekends: 9:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+
                     <div class="info-item location-trigger">
                         <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
                         <div>
@@ -143,19 +156,13 @@
                         </div>
                     </div>
                     
-                    <div class="info-item">
-                        <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
-                        <div>
-                            <strong>Working Hours</strong>
-                            <p>Weekdays: 5:00 PM - 9:00 PM<br>Weekends: 9:00 AM - 9:00 PM</p>
-                        </div>
-                    </div>
+               
 
-                    <div class="info-item">
+                    <div class="info-item contact-trigger" style="cursor: pointer;">
                         <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
                         <div>
-                            <strong>Contact Us</strong>
-                            <p>WhatsApp: 226-582-4530<br>Email: ao.detailing7@gmail.com</p>
+                            <strong>Phone <span class="map-hint">Tap for Options</span></strong>
+                            <p>(382) 577-9977<br>Email: ao.detailing7@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -163,7 +170,7 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/ao.detailing_" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@ao.detailing" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://wa.me/12265824530" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/13825779977" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="https://mail.google.com/mail/u/0/?fs=1&view=cm&fs=1&to=ao.detailing7@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
@@ -255,16 +262,75 @@
         </div>
     </div>
 
+    <!-- Contact Options Modal -->
+    <div id="contactModal" class="maps-modal">
+        <div class="maps-modal-content">
+            <button class="maps-modal-close" id="closeContactModalBtn">&times;</button>
+            <h3>Contact Options</h3>
+            <p>How would you like to reach out to us at <strong>(382) 577-9977</strong>?</p>
+            <div class="maps-options">
+                <a href="tel:3825779977" class="maps-btn">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Phone Number</span>
+                </a>
+                <a href="sms:3825779977" class="maps-btn">
+                    <i class="fa-solid fa-comment-sms"></i>
+                    <span>Send SMS Message</span>
+                </a>
+              
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">AO <span>Detailing</span></div>
+            <a href="#" class="footer-logo scroll-link" data-target="home" style="text-decoration: none; display: inline-block;">AO <span>Detailing</span></a>
             <p>&copy; 2026 AO Detailing. All Rights Reserved.</p>
             <p>Located in <span class="location-trigger footer-loc-link">St. Thomas, ON</span>.</p>
         </div>
     </footer>
 
-    <!-- Frontend Form Handling and Maps Modal Logic -->
+    <!-- Frontend Form Handling and Modals Logic -->
     <script>
+        // CLEAN URL TRICK: If someone clicked "Book Now" from the portfolio page, they arrived with an ugly # in the URL.
+        // This tiny script waits 10ms for the browser to jump down, then erases the # from the URL bar!
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                setTimeout(() => {
+                    history.replaceState(null, null, window.location.pathname);
+                }, 10);
+            }
+        });
+
+        // Smooth scrolling for clean URLs within the same page
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Contact Modal handling
+        const contactModal = document.getElementById('contactModal');
+        const closeContactModalBtn = document.getElementById('closeContactModalBtn');
+
+        document.querySelectorAll('.contact-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('active');
+            });
+        });
+
+        closeContactModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('active');
+        });
+
         // Maps Modal handling
         const mapsModal = document.getElementById('mapsModal');
         const closeMapsModalBtn = document.getElementById('closeMapsModalBtn');
@@ -274,8 +340,6 @@
         document.querySelectorAll('.location-trigger').forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 e.preventDefault();
-                
-                // OS detection
                 const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
                 if (isApple) {
                     appleRec.style.display = 'inline-block';
@@ -284,7 +348,6 @@
                     googleRec.style.display = 'inline-block';
                     appleRec.style.display = 'none';
                 }
-                
                 mapsModal.classList.add('active');
             });
         });
@@ -297,9 +360,12 @@
             if (e.target === mapsModal) {
                 mapsModal.classList.remove('active');
             }
+            if (e.target === contactModal) {
+                contactModal.classList.remove('active');
+            }
         });
 
-        // Set dynamic date ranges (Min = today, Max = 1 month from today)
+        // Set dynamic date ranges
         window.addEventListener('DOMContentLoaded', () => {
             const dateInput = document.getElementById('bookingDate');
             const todayObj = new Date();
@@ -340,14 +406,13 @@
             });
         });
 
-        // Sync service selector package from cards to reservation form
+        // Sync service selector
         document.querySelectorAll('.select-package-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const choice = e.target.getAttribute('data-package');
                 const dropDown = document.getElementById('servicePackage');
                 dropDown.value = choice;
                 document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
-                // Small delay to ensure smooth scrolling finishes before focus
                 setTimeout(() => dropDown.focus(), 600);
             });
         });
@@ -488,7 +553,7 @@
                 }
             } catch (error) {
                 statusText.className = "error-msg-status";
-                statusText.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i> Connection issue. Please WhatsApp us at 226-582-4530.";
+                statusText.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i> Connection issue. Please call us at (382) 577-9977.";
             }
 
             btn.innerText = "Send Reservation Request";
