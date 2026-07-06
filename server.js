@@ -7,7 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// UPDATED: Added { extensions: ['html'] } to support clean URLs (e.g. /portfolio)
+app.use(express.static(path.join(__dirname, 'public'), {
+    extensions: ['html']
+}));
 
 // Initialize Resend with API key from .env
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -116,8 +120,8 @@ app.post('/api/book', async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: 'AO Detailing <onboarding@resend.dev>',   // You can change this later
-            to: process.env.EMAIL_USER,                     // Your Gmail: ao.detailing7@gmail.com
+            from: 'AO Detailing <onboarding@resend.dev>',
+            to: process.env.EMAIL_USER,
             subject: `New Booking Request - ${service} | ${firstName} ${lastName}`,
             html: htmlContent
         });
