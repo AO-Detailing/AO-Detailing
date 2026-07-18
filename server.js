@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// UPDATED: Added { extensions: ['html'] } to support clean URLs (e.g. /portfolio)
+// Support clean URLs (e.g., /portfolio instead of portfolio.html)
 app.use(express.static(path.join(__dirname, 'public'), {
     extensions: ['html']
 }));
@@ -26,7 +26,18 @@ function formatTimeTo12Hour(timeStr) {
 }
 
 app.post('/api/book', async (req, res) => {
-    const { firstName, lastName, phone, email, service, date, time, message } = req.body;
+    const { 
+        firstName, 
+        lastName, 
+        phone, 
+        email, 
+        service, 
+        date, 
+        time, 
+        message, 
+        customFeatures, 
+        customTotalPrice 
+    } = req.body;
 
     // Validation
     const namePattern = /^[a-zA-ZÀ-ÿ\s'\-]{2,30}$/;
@@ -56,10 +67,55 @@ app.post('/api/book', async (req, res) => {
         return res.status(400).json({ success: false, message: "Booking date cannot be in the past." });
     }
     if (bookingDate > maxFutureDate) {
-        return res.status(400).json({ success: false, message: "Bookings can only be scheduled up to 1 months in advance." });
+        return res.status(400).json({ success: false, message: "Bookings can only be scheduled up to 1 month in advance." });
+    }
+
+    // Custom package checks
+    if (service === 'Custom Package' && (!customFeatures || !Array.isArray(customFeatures) || customFeatures.length === 0)) {
+        return res.status(400).json({ success: false, message: "At least one custom feature must be selected." });
     }
 
     const formattedTime = formatTimeTo12Hour(time);
+
+    // Build the Service Display name and custom details section for the email
+    let serviceDisplay = service;
+    let customFeaturesHtml = '';
+
+    if (service === 'Custom Package' && Array.isArray(customFeatures)) {
+        serviceDisplay = `Custom Package (Est. Total: $${customTotalPrice})`;
+        
+        customFeaturesHtml = `
+            <tr>
+                <td colspan="2" style="padding: 16px 0 8px; font-weight: 700; color: #111111; font-size: 14px; text-transform: uppercase; border-bottom: 1px solid #eaeaea;">
+                    Selected Custom Features:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding: 8px 0; border-bottom: 1px solid #f0f0f0;">
+                    <table style="width: 100%; border-collapse: collapse; background: #fafafa; border-radius: 8px; border: 1px solid #e5e5e5; overflow: hidden;">
+                        ${customFeatures.map(feat => `
+                            <tr>
+                                <td style="padding: 10px 14px; font-size: 13px; color: #333333; border-bottom: 1px solid #eaeaea;">
+                                    • ${feat.name}
+                                </td>
+                                <td style="padding: 10px 14px; font-size: 13px; color: #2563eb; font-weight: 700; text-align: right; border-bottom: 1px solid #eaeaea; width: 80px;">
+                                    ${feat.price === 0 ? 'FREE' : `+$${feat.price}`}
+                                </td>
+                            </tr>
+                        `).join('')}
+                        <tr style="background: #eff6ff;">
+                            <td style="padding: 12px 14px; font-size: 14px; font-weight: 700; color: #1e3a8a;">
+                                Calculated Estimated Total
+                            </td>
+                            <td style="padding: 12px 14px; font-size: 16px; font-weight: 800; color: #2563eb; text-align: right;">
+                                $${customTotalPrice}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        `;
+    }
 
     const htmlContent = `
         <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
@@ -78,8 +134,9 @@ app.post('/api/book', async (req, res) => {
                     </tr>
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-weight: 600; color: #444;">Service Package</td>
-                        <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #007bff; font-weight: 600;">${service}</td>
+                        <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #2563eb; font-weight: 600;">${serviceDisplay}</td>
                     </tr>
+                    ${customFeaturesHtml}
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-weight: 600; color: #444;">Requested Date</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #222;">${date}</td>
@@ -91,13 +148,13 @@ app.post('/api/book', async (req, res) => {
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-weight: 600; color: #444;">Phone</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
-                            <a href="tel:${phone}" style="color: #007bff; text-decoration: none;">${phone}</a>
+                            <a href="tel:${phone}" style="color: #2563eb; text-decoration: none;">${phone}</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-weight: 600; color: #444;">Email</td>
                         <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
-                            <a href="mailto:${email}" style="color: #007bff; text-decoration: none;">${email}</a>
+                            <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a>
                         </td>
                     </tr>
                 </table>
@@ -105,7 +162,7 @@ app.post('/api/book', async (req, res) => {
                 <!-- Message Section -->
                 <div style="margin-top: 28px;">
                     <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">Vehicle & Special Requests</h4>
-                    <div style="background: #f8f9fa; padding: 18px; border-left: 4px solid #007bff; border-radius: 4px; line-height: 1.5; color: #333; white-space: pre-wrap;">
+                    <div style="background: #f8f9fa; padding: 18px; border-left: 4px solid #2563eb; border-radius: 4px; line-height: 1.5; color: #333; white-space: pre-wrap;">
                         ${message ? message.replace(/\n/g, '<br>') : '<em>No additional details provided.</em>'}
                     </div>
                 </div>
@@ -122,7 +179,7 @@ app.post('/api/book', async (req, res) => {
         await resend.emails.send({
             from: 'AO Detailing <onboarding@resend.dev>',
             to: process.env.EMAIL_USER,
-            subject: `New Booking Request - ${service} | ${firstName} ${lastName}`,
+            subject: `New Booking Request - ${serviceDisplay} | ${firstName} ${lastName}`,
             html: htmlContent
         });
 
