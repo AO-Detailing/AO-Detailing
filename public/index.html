@@ -43,7 +43,10 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-badge">Professional Auto Detailing</div>
-            <h1>Revive Your Ride's <span class="accent-text">Shine</span></h1>
+         <h1>
+    <span>We Do It <span class="accent-text">Better</span>,</span><br>
+    <span>We Do It <span class="accent-text">Cheaper</span>.</span>
+</h1>
             <p>Affordable, meticulous, and high-quality car detailing in St. Thomas, Ontario. We handle the dirt, you enjoy the drive.</p>
             <div class="hero-actions">
                 <a href="#" class="btn-primary scroll-link" data-target="book">Make a Reservation</a>
@@ -92,7 +95,7 @@
                     <li><i class="fa-solid fa-check"></i> Deep Car Vacuuming</li>
                     <li><i class="fa-solid fa-check"></i> Interior Window Cleaning</li>
                     <li><i class="fa-solid fa-check"></i> Interior Wipe Down</li>
-                    <li><i class="fa-solid fa-check"></i> Rubber Mat Cleaning</li>
+                    <li><i class="fa-solid fa-check"></i> Dashboard Plastic Restoration </li>
                     <li><i class="fa-solid fa-check"></i> Dust Removal</li>
                     <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
                     <li><i class="fa-solid fa-check"></i> Trash Removal</li>
@@ -112,6 +115,11 @@
                 <ul>
                     <li><i class="fa-solid fa-star"></i> Full Exterior Detail</li>
                     <li><i class="fa-solid fa-star"></i> Full Interior Detail</li>
+
+                    <li><i class="fa-solid fa-check"></i> Exterior Waxing</li>        
+                    <li><i class="fa-solid fa-check"></i> Interior Plastic Restoration </li>
+                    <li><i class="fa-solid fa-check"></i> Exterior Plastic Restoration </li>
+                     <li><i class="fa-solid fa-check"></i> Exterior Hand Wash </li>
                     <li><i class="fa-solid fa-check"></i> Leather Cleaning & Conditioning</li>
                     <li><i class="fa-solid fa-check"></i> Carpet Washing & Extraction</li>
                     <li><i class="fa-solid fa-check"></i> Seat & Carpet Stain Removal</li>
@@ -123,12 +131,67 @@
                     <li><i class="fa-solid fa-check"></i> Rubber Mat Cleaning</li>
                     <li><i class="fa-solid fa-check"></i> Dust Removal</li>
                     <li><i class="fa-solid fa-check"></i> Floor Mat Shake-out</li>
-                   <li><i class="fa-solid fa-check"></i> Trash Removal</li>
+                    <li><i class="fa-solid fa-check"></i> Trash Removal</li>
                 </ul>
 
                 <button class="btn-card select-package-btn" data-package="Complete Detail">Select Package</button>
             </div>
         </div>
+
+      <!-- Custom Package Banner -->
+<div class="custom-package-banner">
+    <div class="custom-banner-info">
+        <div class="custom-banner-badge">
+            <i class="fa-solid fa-sliders"></i> Custom Package
+        </div>
+
+        <h3>Build Your Own Detail Package</h3>
+
+        <p>
+            Only pay for the services you need. Select your desired options,
+            view your estimated total instantly, and create a package that fits
+            both your vehicle and your budget.
+        </p>
+    </div>
+
+    <div class="custom-banner-cta">
+        <span class="price-label">Starting From</span>
+        <div class="custom-banner-price">$10</div>
+
+        <button class="btn-primary select-package-btn"
+            data-package="Custom Package">
+            Customize Package
+        </button>
+    </div>
+</div>
+
+<!-- Dent & Scratch Repair -->
+<div class="custom-package-banner dent-repair-banner">
+    <div class="custom-banner-info">
+        <div class="custom-banner-badge danger">
+            <i class="fa-solid fa-hammer"></i> Paint & Body Repair
+        </div>
+
+        <h3>Dent & Scratch Repair</h3>
+
+        <p>
+            From door dings and dents to paint scratches, we'll assess the
+            damage and provide the most cost-effective repair solution for your
+            vehicle.
+        </p>
+    </div>
+
+    <div class="custom-banner-cta">
+        <span class="price-label">Pricing</span>
+        <div class="custom-banner-price">Free Quote</div>
+
+        <button class="btn-primary repair-btn select-package-btn"
+    data-package="Dent & Scratch Repair">
+    Request Quote
+</button>
+    </div>
+</div>
+
         <p class="disclaimer"><i class="fa-solid fa-circle-info"></i> Note: Prices may vary depending on the condition and size of the vehicle.</p>
     </section>
     
@@ -140,7 +203,7 @@
                 <div class="contact-info-items">
                     <h2>Book Your Spot</h2>
                     <p class="subtitle">Ready to make your car shine? Request a reservation or reach out to us directly.</p>
-                         <div class="info-item">
+                    <div class="info-item">
                         <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
                         <div>
                             <strong>Working Hours</strong>
@@ -156,8 +219,6 @@
                         </div>
                     </div>
                     
-               
-
                     <div class="info-item contact-trigger" style="cursor: pointer;">
                         <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
                         <div>
@@ -211,8 +272,92 @@
                             <option value="Quick Refresh">Quick Refresh (From $10)</option>
                             <option value="Standard Detail">Standard Detail (From $65)</option>
                             <option value="Complete Detail">Complete Detail (From $150)</option>
+                            <option value="Custom Package">Custom Package (Build Your Own)</option>
+                            <option value="Dent & Scratch Repair">Dent & Scratch Repair (Free Quote)</option>
                         </select>
                         <span class="error-msg" id="serviceError"></span>
+                    </div>
+
+                    <!-- Custom Features Selection (Hidden by Default) -->
+                    <div class="custom-features-wrapper" id="customFeaturesWrapper" style="display: none;">
+                        <label class="custom-features-title">Select Custom Features</label>
+                        <div class="custom-features-grid">
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Exterior Waxing" data-price="20">
+                                <span class="feature-name">Exterior Waxing</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Interior Plastic Restoration" data-price="30">
+                                <span class="feature-name">Interior Plastic Restoration</span>
+                                <span class="feature-price">+$30</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Exterior Plastic Restoration" data-price="10">
+                                <span class="feature-name">Exterior Plastic Restoration</span>
+                                <span class="feature-price">+$10</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Exterior Hand Wash" data-price="20">
+                                <span class="feature-name">Exterior Hand Wash</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Leather Cleaning and Conditioning" data-price="15">
+                                <span class="feature-name">Leather Cleaning & Conditioning</span>
+                                <span class="feature-price">+$15</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Carpet Washing and Extraction" data-price="20">
+                                <span class="feature-name">Carpet Washing & Extraction</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Seat and Carpet Stain Removal" data-price="20">
+                                <span class="feature-name">Seat & Carpet Stain Removal</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Wheel and Tire Cleaning" data-price="15">
+                                <span class="feature-name">Wheel & Tire Cleaning</span>
+                                <span class="feature-price">+$15</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Door Jamb Cleaning" data-price="20">
+                                <span class="feature-name">Door Jamb Cleaning</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Interior Window Cleaning" data-price="15">
+                                <span class="feature-name">Interior Window Cleaning</span>
+                                <span class="feature-price">+$15</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Interior Wipe Down and Dust Removal" data-price="20">
+                                <span class="feature-name">Interior Wipe Down & Dust Removal</span>
+                                <span class="feature-price">+$20</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Rubber Mat Cleaning" data-price="10">
+                                <span class="feature-name">Rubber Mat Cleaning</span>
+                                <span class="feature-price">+$10</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Car Vacuuming and Floor Mat Shake-out" data-price="10">
+                                <span class="feature-name">Car Vacuuming & Floor Mat Shake-out</span>
+                                <span class="feature-price">+$10</span>
+                            </label>
+                            <label class="custom-feature-item">
+                                <input type="checkbox" class="feature-checkbox" value="Trash Removal" data-price="0">
+                                <span class="feature-name">Trash Removal</span>
+                                <span class="feature-price">FREE</span>
+                            </label>
+                        </div>
+                        <div class="custom-total-box">
+                            <span>Estimated Total:</span>
+                            <span class="total-price-display" id="totalPriceDisplay">$0</span>
+                        </div>
+                        <span class="error-msg" id="customFeaturesError"></span>
                     </div>
 
                     <div class="form-row">
@@ -230,7 +375,7 @@
 
                     <div class="form-group full-width">
                         <label for="message">Vehicle Details & Special Requests</label>
-                        <textarea id="message" rows="4" placeholder="Make, model, condition? Any specific stains, pet hair, or areas needing extra attention?" required></textarea>
+                        <textarea id="message" rows="4" placeholder="Make, model, condition? Any specific stains, pet hair, or areas needing extra attention? For scratch/dent repair, describe the location of damage." required></textarea>
                         <span class="error-msg" id="messageError"></span>
                     </div>
 
@@ -277,7 +422,6 @@
                     <i class="fa-solid fa-comment-sms"></i>
                     <span>Send SMS Message</span>
                 </a>
-              
             </div>
         </div>
     </div>
@@ -292,8 +436,7 @@
 
     <!-- Frontend Form Handling and Modals Logic -->
     <script>
-        // CLEAN URL TRICK: If someone clicked "Book Now" from the portfolio page, they arrived with an ugly # in the URL.
-        // This tiny script waits 10ms for the browser to jump down, then erases the # from the URL bar!
+        // CLEAN URL TRICK
         window.addEventListener('load', () => {
             if (window.location.hash) {
                 setTimeout(() => {
@@ -302,7 +445,7 @@
             }
         });
 
-        // Smooth scrolling for clean URLs within the same page
+        // Smooth scrolling for clean URLs
         document.querySelectorAll('.scroll-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -406,14 +549,52 @@
             });
         });
 
-        // Sync service selector
+        // Custom features visibility and calculations
+        const serviceDropdown = document.getElementById('servicePackage');
+        const customFeaturesWrapper = document.getElementById('customFeaturesWrapper');
+        const featureCheckboxes = document.querySelectorAll('.feature-checkbox');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+        const customFeaturesError = document.getElementById('customFeaturesError');
+
+        function calculateCustomTotal() {
+            let total = 0;
+            featureCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    total += parseInt(cb.getAttribute('data-price'), 10);
+                }
+            });
+            totalPriceDisplay.innerText = `$${total}`;
+            return total;
+        }
+
+        function toggleCustomFeatures() {
+            if (serviceDropdown.value === 'Custom Package') {
+                customFeaturesWrapper.style.display = 'block';
+                calculateCustomTotal();
+            } else {
+                customFeaturesWrapper.style.display = 'none';
+                customFeaturesError.innerText = '';
+            }
+        }
+
+        serviceDropdown.addEventListener('change', toggleCustomFeatures);
+        featureCheckboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                calculateCustomTotal();
+                if (document.querySelectorAll('.feature-checkbox:checked').length > 0) {
+                    customFeaturesError.innerText = '';
+                }
+            });
+        });
+
+        // Sync service selector from package cards & full-width banners
         document.querySelectorAll('.select-package-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const choice = e.target.getAttribute('data-package');
-                const dropDown = document.getElementById('servicePackage');
-                dropDown.value = choice;
+                const choice = e.currentTarget.getAttribute('data-package');
+                serviceDropdown.value = choice;
+                toggleCustomFeatures();
                 document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => dropDown.focus(), 600);
+                setTimeout(() => serviceDropdown.focus(), 600);
             });
         });
 
@@ -480,6 +661,26 @@
                 service.classList.remove('invalid-field');
             }
 
+            // Custom package feature selection validation
+            let selectedFeatures = [];
+            let customTotalPrice = 0;
+            if (service.value === 'Custom Package') {
+                const checkedCheckboxes = document.querySelectorAll('.feature-checkbox:checked');
+                if (checkedCheckboxes.length === 0) {
+                    customFeaturesError.innerText = "Please select at least one feature.";
+                    isServiceValid = false;
+                } else {
+                    customFeaturesError.innerText = "";
+                    checkedCheckboxes.forEach(cb => {
+                        selectedFeatures.push({
+                            name: cb.value,
+                            price: parseInt(cb.getAttribute('data-price'), 10)
+                        });
+                    });
+                    customTotalPrice = calculateCustomTotal();
+                }
+            }
+
             let isDateValid = true;
             if (!date.value) {
                 errors.date.innerText = "Select a date.";
@@ -531,7 +732,9 @@
                 service: service.value,
                 date: date.value,
                 time: time.value,
-                message: message.value.trim()
+                message: message.value.trim(),
+                customFeatures: selectedFeatures,
+                customTotalPrice: customTotalPrice
             };
 
             try {
@@ -547,6 +750,8 @@
                     statusText.className = "success-msg";
                     statusText.innerHTML = "<i class='fa-solid fa-circle-check'></i> Request sent successfully! We'll be in touch.";
                     document.getElementById('reservationForm').reset();
+                    customFeaturesWrapper.style.display = 'none';
+                    totalPriceDisplay.innerText = '$0';
                 } else {
                     statusText.className = "error-msg-status";
                     statusText.innerHTML = `<i class='fa-solid fa-circle-exclamation'></i> ${result.message || "Failed to process request."}`;
