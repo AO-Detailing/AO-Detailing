@@ -71,7 +71,80 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+.custom-package-banner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
 
+    padding:40px 48px;
+
+    border-radius:24px;
+}
+
+.custom-banner-info{
+    flex:1;
+    max-width:760px;
+}
+
+.custom-banner-info h3{
+    font-size:2rem;
+    margin:12px 0;
+}
+
+.custom-banner-info p{
+    font-size:1rem;
+    line-height:1.75;
+    color:#b7b7b7;
+    max-width:650px;
+}
+
+.custom-banner-cta{
+    flex-shrink:0;
+
+    min-width:220px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.price-label{
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#888;
+    margin-bottom:6px;
+}
+
+.custom-banner-price{
+    font-size:2rem;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.custom-banner-cta .btn-primary{
+    width:210px;
+}
+
+.danger{
+    background:rgba(239,68,68,.15);
+    color:#f87171;
+    border:1px solid rgba(239,68,68,.2);
+}
+
+.repair-btn {
+    background: var(--accent-gradient);
+    border: none;
+}
+
+.repair-btn:hover {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
 /* =========================================
    NAVBAR (Glassmorphism & Clean)
    ========================================= */
@@ -142,6 +215,7 @@ a {
 }
 
 /* Mobile Menu Button */
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -456,6 +530,95 @@ a {
     box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
 }
 
+/* =========================================
+   CUSTOM PACKAGE BANNER ROW
+   ========================================= */
+.custom-package-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px 40px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    gap: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.custom-package-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--accent-gradient);
+}
+
+/* Custom visual styling for Dent Repair banner */
+/* Blue styling for Dent Repair banner visual variants */
+.custom-package-banner.dent-repair-banner::before {
+    background: var(--accent-gradient);
+}
+.custom-package-banner:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.custom-banner-info {
+    max-width: 700px;
+}
+
+.custom-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 99, 235, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.custom-banner-info h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.custom-banner-info p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.custom-banner-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.custom-banner-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.custom-banner-price span {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
 .disclaimer { 
     text-align: center; 
     margin-top: 40px; 
@@ -741,6 +904,106 @@ textarea {
 }
 
 /* =========================================
+   CUSTOM FEATURES (INTERACTIVE BUILDER)
+   ========================================= */
+.custom-features-wrapper {
+    margin-bottom: 24px;
+    background: var(--surface-bg);
+    border: 1px dashed var(--border-color);
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.custom-features-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.custom-features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+@media(min-width: 576px) {
+    .custom-features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.custom-feature-item {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    user-select: none;
+}
+
+.custom-feature-item:hover {
+    border-color: var(--border-hover);
+    background: var(--card-hover-bg);
+}
+.accent-text {
+    color: #007bff; /* blue */
+}
+.custom-feature-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-color);
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.feature-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e5e5e5;
+    flex-grow: 1;
+}
+
+.feature-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-left: 8px;
+}
+
+.custom-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.custom-total-box span:first-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e5e5e5;
+}
+
+.total-price-display {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
+/* =========================================
    PORTFOLIO PAGE SECTION
    ========================================= */
 .portfolio-section {
@@ -1019,6 +1282,40 @@ footer p {
     .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
     .form-group { margin-bottom: 20px; }
     
+    .custom-package-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 24px;
+        gap: 24px;
+        margin: 24px auto 0 auto;
+    }
+    .custom-package-banner::before {
+        height: 4px;
+        width: 100%;
+        top: 0; left: 0; right: 0;
+        bottom: auto;
+    }
+    .custom-banner-cta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.custom-banner-price {
+    align-self: center;
+}
+
+.custom-banner-cta .btn-primary,
+.custom-banner-cta .repair-btn,
+.custom-banner-cta .select-package-btn {
+    width: 210px;
+    margin: 0 auto;
+    display: block;
+}
+
     footer { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
 }
 
